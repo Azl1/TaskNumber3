@@ -10,17 +10,6 @@ public class HealthActivity extends AppCompatActivity {
     int weight;
     int numberSteps;
 
-    public HealthActivity(int weight, int numberSteps) {
-        this.weight = weight;
-        this.numberSteps = numberSteps;
-    }
-
-    public HealthActivity(int contentLayoutId, int weight, int numberSteps) {
-        super(contentLayoutId);
-        this.weight = weight;
-        this.numberSteps = numberSteps;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

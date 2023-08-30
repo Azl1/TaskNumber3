@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextWeight;
     EditText editTextNumberSteps;
 
-    private static final String TAG  = "MyApp";
+    private static final String TAG = "MyApp";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         EditText editTextMainFIO = (EditText) findViewById(R.id.editTextFIO);
         EditText editTextMainAGE = (EditText) findViewById(R.id.editTextAge);
 
-      //  EditText editTextWeight = (EditText) findViewById(R.id)
-     //   EditText editTextNumberSteps = (EditText) findViewById(R.id.numberSteps);
+        //  EditText editTextWeight = (EditText) findViewById(R.id)
+        //   EditText editTextNumberSteps = (EditText) findViewById(R.id.numberSteps);
 
 
         buttonSaveMain.setOnClickListener(new View.OnClickListener() {
@@ -40,16 +40,23 @@ public class MainActivity extends AppCompatActivity {
                 String fio = editTextMainFIO.getText().toString();
                 String age = editTextMainAGE.getText().toString();
 
+                Toast.makeText(MainActivity.this, "Данные сохранены", Toast.LENGTH_LONG).show();
+
             }
         });
 
         pressureRecording.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, PressureActivity.class );
+                Intent intent = new Intent(MainActivity.this, PressureActivity.class);
                 startActivity(intent);
 
-   //             PressureActivity pressureActivity = new PressureActivity(Integer.parseInt(fio),Integer.parseInt(age), Integer.parseInt(fio));
+                try {
+                    Toast.makeText(MainActivity.this, "Данные сохранены", Toast.LENGTH_LONG).show();
+                } catch (Exception exception) {
+                    Toast.makeText(MainActivity.this, "Неправильно введены данные", Toast.LENGTH_LONG).show();
+                    Log.e(TAG, "Получено исключение", exception);
+                }
             }
         });
 
@@ -61,12 +68,11 @@ public class MainActivity extends AppCompatActivity {
                 String weight = editTextWeight.getText().toString();
                 String numberSteps = editTextNumberSteps.getText().toString();
                 try {
-            HealthActivity healthActivity = new HealthActivity(Integer.parseInt(weight),Integer.parseInt(numberSteps));
+                    Toast.makeText(MainActivity.this, "Данные сохранены", Toast.LENGTH_LONG).show();
+                } catch (Exception exception) {
+                    Toast.makeText(MainActivity.this, "Неправильно введены данные", Toast.LENGTH_LONG).show();
+                    Log.e(TAG, "Получено исключение", exception);
                 }
-               catch (Exception exception) {
-                   Toast.makeText(MainActivity.this, "Неправильно введены данные", Toast.LENGTH_LONG).show();
-                   Log.e(TAG,"Получено исключение", exception);
-               }
             }
         });
 

@@ -37,8 +37,8 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="ФИО"
         android:inputType="text"
-        android:text="ФИО"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textName" />
 
@@ -49,8 +49,8 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:hint="Возраст"
         android:inputType="text"
-        android:text="Возраст"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextFIO" />
 
