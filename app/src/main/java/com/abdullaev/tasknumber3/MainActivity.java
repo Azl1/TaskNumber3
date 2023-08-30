@@ -50,13 +50,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, PressureActivity.class);
                 startActivity(intent);
-
-                try {
-                    Toast.makeText(MainActivity.this, "Данные сохранены", Toast.LENGTH_LONG).show();
-                } catch (Exception exception) {
-                    Toast.makeText(MainActivity.this, "Неправильно введены данные", Toast.LENGTH_LONG).show();
-                    Log.e(TAG, "Получено исключение", exception);
-                }
             }
         });
 
